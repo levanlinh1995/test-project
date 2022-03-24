@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\ProductController;
+use App\Http\Controllers\Api\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/auth/login', [AuthController::class, 'login']);
+
+Route::group(['middleware' => ['auth:sanctum']], function () {
+    Route::post('/logout', [AuthController::class, 'logout']);
+
+    Route::get('/items', [ProductController::class, 'index']);
+    Route::post('/item/add', [ProductController::class, 'store']);
+    Route::post('/item/update', [ProductController::class, 'update']);
+    Route::post('/item/delete', [ProductController::class, 'destroy']);
+    Route::post('/item/search', [ProductController::class, 'searchBySku']);
 });
