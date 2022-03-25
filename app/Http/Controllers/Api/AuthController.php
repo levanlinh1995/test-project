@@ -30,44 +30,27 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
 
-        $token = $user->createToken('my-auth-token')->plainTextToken;
-
         return response()->json([
-            'token' => [
-                'access_token' => $token,
-                'token_type' => 'bearer',
-            ],
-            'user' => $user,
+            'message' => 'Registered successfully.',
+            'user' => $user
         ], Response::HTTP_CREATED);
     }
 
     public function login(LoginRequest $request)
     {
-        $data = $request->only(['email', 'password']);
+        $credentials = request(['email', 'password']);
 
-        $user = User::where('email', $data['email'])->first();
-
-        if (!$user || !Hash::check($data['password'], $user->password)) {
-            return response()->json(
-                ['error' => 'The email or password you entered is incorrect.'
-            ], Response::HTTP_UNAUTHORIZED);
+        if (! $token = auth()->attempt($credentials)) {
+            return response()->json(['error' => 'Unauthorized'], Response::HTTP_UNAUTHORIZED);
         }
-
-        $token = $user->createToken('my-auth-token')->plainTextToken;
 
         return response()->json([
             'token' => [
                 'access_token' => $token,
                 'token_type' => 'bearer',
+                'expires_in' => auth()->factory()->getTTL() * 60
             ],
-            'user' => $user,
+            'user' => auth()->user(),
         ]);
-    }
-
-    public function logout(Request $request)
-    {
-        $request->user()->currentAccessToken()->delete();
-
-        return response()->json(['message' => 'Successfully logged out']);
     }
 }

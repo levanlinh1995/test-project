@@ -16,10 +16,10 @@ class ProductTest extends TestCase
         $faker = \Faker\Factory::create();
 
         $user = User::factory()->create();
-        $token = $user->createToken('my-auth-token')->plainTextToken;
+        $token = auth()->login($user);
 
         $payload = [
-            'name' => 'test',
+            'product_name' => 'test',
             'sku' => Str::random(10),
             'price' => $faker->randomNumber(),
             'qty' => $faker->numberBetween(1000,9000),
@@ -43,12 +43,12 @@ class ProductTest extends TestCase
         $faker = \Faker\Factory::create();
 
         $user = User::factory()->create();
-        $token = $user->createToken('my-auth-token')->plainTextToken;
+        $token = auth()->login($user);
 
         $product = Product::factory()->create();
 
         $payload = [
-            'name' => 'test updated!',
+            'product_name' => 'test updated!',
             'price' => '50.50',
             'sku' => $product->sku,
             'qty' => 1000,
@@ -64,7 +64,7 @@ class ProductTest extends TestCase
              ->assertStatus(200)
              ->assertJson([
                     'data' => [
-                        'name' => 'test updated!',
+                        'product_name' => 'test updated!',
                         'price' => '50.50',
                         'sku' => $product->sku,
                         'qty' => 1000,
@@ -79,7 +79,7 @@ class ProductTest extends TestCase
         $faker = \Faker\Factory::create();
 
         $user = User::factory()->create();
-        $token = $user->createToken('my-auth-token')->plainTextToken;
+        $token = auth()->login($user);
 
         $product = Product::factory()->create();
 
@@ -100,7 +100,7 @@ class ProductTest extends TestCase
         $faker = \Faker\Factory::create();
 
         $user = User::factory()->create();
-        $token = $user->createToken('my-auth-token')->plainTextToken;
+        $token = auth()->login($user);
 
         $product = Product::factory()->create();
         $product = Product::factory()->create();
@@ -122,7 +122,7 @@ class ProductTest extends TestCase
         $faker = \Faker\Factory::create();
 
         $user = User::factory()->create();
-        $token = $user->createToken('my-auth-token')->plainTextToken;
+        $token = auth()->login($user);
 
         $product = Product::factory()->create();
 

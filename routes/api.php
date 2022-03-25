@@ -19,12 +19,11 @@ use App\Http\Controllers\Api\AuthController;
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/auth/login', [AuthController::class, 'login']);
 
-Route::group(['middleware' => ['auth:sanctum']], function () {
-    Route::post('/logout', [AuthController::class, 'logout']);
-
+Route::group(['middleware' => 'auth:api'], function ($router) {
     Route::get('/items', [ProductController::class, 'index']);
     Route::post('/item/add', [ProductController::class, 'store']);
     Route::post('/item/update', [ProductController::class, 'update']);
     Route::post('/item/delete', [ProductController::class, 'destroy']);
     Route::post('/item/search', [ProductController::class, 'searchBySku']);
+
 });

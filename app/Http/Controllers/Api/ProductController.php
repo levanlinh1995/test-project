@@ -44,7 +44,7 @@ class ProductController extends Controller
 
         $product = $this->productRepository->create([
             'sku' => $data['sku'],
-            'name' => $data['name'],
+            'product_name' => $data['product_name'],
             'price' => $data['price'],
             'qty' => $data['qty'],
             'unit' => $data['unit'],
@@ -75,7 +75,7 @@ class ProductController extends Controller
 
         $product = $this->productRepository->update($product->id, [
             'sku' => $data['sku'],
-            'name' => $data['name'],
+            'product_name' => $data['product_name'],
             'price' => $data['price'],
             'qty' => $data['qty'],
             'unit' => $data['unit'],

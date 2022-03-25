@@ -39,10 +39,11 @@ class LoginTest extends TestCase
              ->assertJsonStructure([
                  'token' => [
                      'access_token',
-                     'token_type'
+                     'token_type',
+                     'expires_in'
                  ],
                  'user' => [
-                    'name',
+                    'id',
                     'name',
                     'email',
                     'email_verified_at',

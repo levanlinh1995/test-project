@@ -65,7 +65,7 @@
 					"formdata": [
 						{
 							"key": "email",
-							"value": "chi@gmail.com",
+							"value": "chi@gmail.coma",
 							"type": "text"
 						},
 						{
@@ -95,60 +95,6 @@
 			"response": []
 		},
 		{
-			"name": "http://127.0.0.1:8000/api/logout",
-			"request": {
-				"auth": {
-					"type": "bearer",
-					"bearer": [
-						{
-							"key": "token",
-							"value": "9|PtS7g6uAd5UjXCYHXk2ThRR39qjNIsP0RfE1lqw5",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Accept",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "email",
-							"value": "linh4@gmail.com",
-							"type": "text"
-						},
-						{
-							"key": "password",
-							"value": "12345678",
-							"type": "text"
-						}
-					]
-				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/logout",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"logout"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "http://127.0.0.1:8000/api/items",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
@@ -159,7 +105,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "11|G2qrIzFsVYDLc2DUqFHyNiv9akWcSHvbnQIv76nv",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0ODIxMDU5NSwiZXhwIjoxNjQ4MjE0MTk1LCJuYmYiOjE2NDgyMTA1OTUsImp0aSI6InBwb1lNbXhJY2NkU3R4c3EiLCJzdWIiOjYsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.kaAscw6oTF_rzomp2wzMHGwe7flpZm5B-UrWVlDF2AI",
 							"type": "string"
 						}
 					]
@@ -202,7 +148,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "11|G2qrIzFsVYDLc2DUqFHyNiv9akWcSHvbnQIv76nv",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0ODIxMDU5NSwiZXhwIjoxNjQ4MjE0MTk1LCJuYmYiOjE2NDgyMTA1OTUsImp0aSI6InBwb1lNbXhJY2NkU3R4c3EiLCJzdWIiOjYsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.kaAscw6oTF_rzomp2wzMHGwe7flpZm5B-UrWVlDF2AI",
 							"type": "string"
 						}
 					]
@@ -224,7 +170,7 @@
 							"type": "text"
 						},
 						{
-							"key": "name",
+							"key": "product_name",
 							"value": "dsfsdf 1212",
 							"type": "text"
 						},
@@ -277,7 +223,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "11|G2qrIzFsVYDLc2DUqFHyNiv9akWcSHvbnQIv76nv",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0ODIxMDU5NSwiZXhwIjoxNjQ4MjE0MTk1LCJuYmYiOjE2NDgyMTA1OTUsImp0aSI6InBwb1lNbXhJY2NkU3R4c3EiLCJzdWIiOjYsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.kaAscw6oTF_rzomp2wzMHGwe7flpZm5B-UrWVlDF2AI",
 							"type": "string"
 						}
 					]
@@ -299,7 +245,7 @@
 							"type": "text"
 						},
 						{
-							"key": "name",
+							"key": "product_name",
 							"value": "dsfsdf 1212",
 							"type": "text"
 						},
@@ -352,7 +298,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "11|G2qrIzFsVYDLc2DUqFHyNiv9akWcSHvbnQIv76nv",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0ODIxMDU5NSwiZXhwIjoxNjQ4MjE0MTk1LCJuYmYiOjE2NDgyMTA1OTUsImp0aSI6InBwb1lNbXhJY2NkU3R4c3EiLCJzdWIiOjYsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.kaAscw6oTF_rzomp2wzMHGwe7flpZm5B-UrWVlDF2AI",
 							"type": "string"
 						}
 					]
@@ -402,7 +348,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "11|G2qrIzFsVYDLc2DUqFHyNiv9akWcSHvbnQIv76nv",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0ODIxMDU5NSwiZXhwIjoxNjQ4MjE0MTk1LCJuYmYiOjE2NDgyMTA1OTUsImp0aSI6InBwb1lNbXhJY2NkU3R4c3EiLCJzdWIiOjYsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.kaAscw6oTF_rzomp2wzMHGwe7flpZm5B-UrWVlDF2AI",
 							"type": "string"
 						}
 					]
@@ -420,7 +366,7 @@
 					"formdata": [
 						{
 							"key": "sku",
-							"value": "Z66vsaQKd6",
+							"value": "435345SFSa11d21",
 							"type": "text"
 						}
 					]

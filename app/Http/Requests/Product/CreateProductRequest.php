@@ -25,7 +25,7 @@ class CreateProductRequest extends FormRequest
     {
         return [
             'sku' => 'required|max:255|unique:products,sku',
-            'name' => 'required|max:255',
+            'product_name' => 'required|max:255',
             'price' => 'required|numeric',
             'qty' => 'required|integer',
             'unit' => 'required|string',
